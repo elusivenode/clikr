@@ -1,5 +1,6 @@
 src/chapter_1/hello_world.c
 src/chapter_1/fahr_to_celc.c
+src/chapter_1/fahr_to_celc_rev.c
 src/chapter_1/celc_to_fahr.c
 src/cli.c
 src/examples.c

@@ -5,6 +5,7 @@
 
 #include "chapter_1/hello_world.h"
 #include "chapter_1/fahr_to_celc.h"
+#include "chapter_1/fahr_to_celc_rev.h"
 #include "chapter_1/celc_to_fahr.h"
 
 static int run_ch1_hello_world(void) {
@@ -15,6 +16,17 @@ static int run_ch1_hello_world(void) {
 static int run_ch1_fahr_to_celc(void) {
     char buf[256];
     size_t n = ch1_fahr_to_celc_table(buf, sizeof(buf));
+    if (n == 0 || n >= sizeof(buf)) {
+        fputs("error: temp conversion table did not fit buffer\n", stderr);
+        return 1;
+    }
+    fputs(buf, stdout);
+    return 0;
+}
+
+static int run_ch1_fahr_to_celc_rev(void) {
+    char buf[256];
+    size_t n = ch1_fahr_to_celc_rev_table(buf, sizeof(buf));
     if (n == 0 || n >= sizeof(buf)) {
         fputs("error: temp conversion table did not fit buffer\n", stderr);
         return 1;
@@ -38,6 +50,7 @@ static const struct Example k_examples[] = {
     { "1.1", "chapter_1/hello_world", "Hello, world", run_ch1_hello_world },
     { "1.2", "chapter_1/fahr_to_celc", "Fahrenheit-Celsius table", run_ch1_fahr_to_celc },
     { "1.3", "chapter_1/celc_to_fahr", "Celsius-Fahrenheit table", run_ch1_celc_to_fahr },
+    { "1.4", "chapter_1/fahr_to_celc_rev", "Fahrenheit-Celsius table reversed", run_ch1_fahr_to_celc_rev },
 };
 
 size_t example_count(void) {
