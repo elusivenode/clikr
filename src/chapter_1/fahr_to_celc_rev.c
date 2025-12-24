@@ -2,6 +2,10 @@
 #include <stddef.h>
 #include <stdio.h>
 
+#define LOWER   0
+#define UPPER   300
+#define STEP    20
+
 size_t ch1_fahr_to_celc_rev_table(char *out, size_t out_len) {
     int fahr;
     size_t used = 0;
@@ -10,7 +14,7 @@ size_t ch1_fahr_to_celc_rev_table(char *out, size_t out_len) {
                            "*** Fahrenheit to Celsius Rev Conversion Table ***\n");
     if (written < 0 || (size_t)written >= out_len - used) return 0;
     used += (size_t)written;
-    for (fahr = 300; fahr >= 0; fahr -= 20) {
+    for (fahr = UPPER; fahr >= LOWER; fahr -= STEP) {
         written = snprintf(out + used, out_len - used, "%3d %6.1f\n", fahr, (5.0 / 9.0) * (fahr - 32));
 
         if (written < 0) {
