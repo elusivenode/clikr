@@ -1,6 +1,5 @@
 #include <stdarg.h>
 #include <stddef.h>
-#include <setjmp.h>
 #include <cmocka.h>
 
 // Declare each chapter’s test collector.
