@@ -3,14 +3,14 @@
 #include <setjmp.h>
 #include <cmocka.h>
 
-static void test_sanity(void **state) {
-    (void)state;
-    assert_int_equal(1, 1);
-}
+// Declare each chapter’s test collector.
+size_t ch1_tests(struct CMUnitTest *out);
 
 int main(void) {
-    const struct CMUnitTest tests[] = {
-        cmocka_unit_test(test_sanity),
-    };
-    return cmocka_run_group_tests(tests, NULL, NULL);
+    struct CMUnitTest tests[128];
+    size_t count = 0;
+
+    // Collect chapter 1 tests.
+    count += ch1_tests(tests + count);
+    return _cmocka_run_group_tests("clikr_tests", tests, count, NULL, NULL);
 }

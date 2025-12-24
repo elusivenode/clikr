@@ -1,0 +1,4 @@
+CompileFlags:
+  Add:
+    - -I/Users/elusivenode/Documents/Dev/elusivenode/clikr/external/cmocka/include
+    - -I/Users/elusivenode/Documents/Dev/elusivenode/clikr/src

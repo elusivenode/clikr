@@ -1,0 +1,2 @@
+tests/test_main.c
+tests/chapter_1/test_hello_world.c
