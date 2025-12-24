@@ -1,4 +1,5 @@
 tests/test_main.c
 tests/chapter_1/ch1_tests.c
 tests/chapter_1/test_hello_world.c
-tests/chapter_1/test_temp_conv.c
+tests/chapter_1/test_fahr_to_celc.c
+tests/chapter_1/test_celc_to_fahr.c

@@ -1,4 +1,5 @@
 src/chapter_1/hello_world.c
-src/chapter_1/temp_conv.c
+src/chapter_1/fahr_to_celc.c
+src/chapter_1/celc_to_fahr.c
 src/cli.c
 src/examples.c
